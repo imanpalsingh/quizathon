@@ -12,6 +12,43 @@
   position: relative;
   flex: 1;
 
+  &.wait {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      opacity: 0.1;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      top: 50%;
+      width: 80%;
+      height: auto;
+    }
+
+    .title {
+      font-size: 3rem;
+    }
+
+    .content{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      button{
+        align-self: start;
+      }
+    }
+
+
+  }
+
+
   &::before {
     content: '';
     border-radius: 15px;
@@ -20,6 +57,7 @@
     position: absolute;
     z-index: -1;
   }
+
 }
 
 .leaderboard {
@@ -56,21 +94,20 @@
     gap: 1rem;
     align-items: center;
     justify-content: center;
+    border: 1px solid white;
 
     &.card {
       padding: 1rem 1.5rem;
     }
 
     &.first {
+      border: none;
       background: #EBC271;
       background: -webkit-linear-gradient(right, #EBC271, #B32FA5);
       background: -moz-linear-gradient(right, #EBC271, #B32FA5);
       background: linear-gradient(to left, #EBC271, #B32FA5);
     }
 
-    &.runner {
-      border: 1px solid white;
-    }
 
     .name {
       flex: 1;
@@ -172,23 +209,27 @@
     }
   }
 
-  .exit{
+  .exit {
     margin-top: 2rem;
-    background-color: transparent;
-    color: $white;
-    border: 1px solid $purple;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    transition: linear 200ms;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
+  }
 
-    &:hover{
-      background-color: $purple;
-      gap: 0.8rem;
-    }
+}
+
+button {
+  background-color: transparent;
+  color: $white;
+  border: 1px solid $purple;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: linear 200ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+
+  &:hover {
+    background-color: $purple;
+    gap: 0.8rem;
   }
 }
