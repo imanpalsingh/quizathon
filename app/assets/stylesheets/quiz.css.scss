@@ -35,19 +35,17 @@
       font-size: 3rem;
     }
 
-    .content{
+    .content {
       position: relative;
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      button{
+
+      button {
         align-self: start;
       }
     }
-
-
   }
-
 
   &::before {
     content: '';
@@ -57,7 +55,6 @@
     position: absolute;
     z-index: -1;
   }
-
 }
 
 .leaderboard {
