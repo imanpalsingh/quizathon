@@ -1,5 +1,5 @@
 <% if started %>
-  <span>Work in progress</span>
+  <%= render 'shared/quiz/quiz_start', { question: question } %>
 <% else %>
   <%= render 'shared/quiz/quiz_waiting' %>
 <% end %>
