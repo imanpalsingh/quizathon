@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   has_many :user_quiz_sessions
   has_many :quizzes, through: :user_quiz_sessions
+
+  validates :first_name, :last_name, :email, presence: :true
+  validates :email, uniqueness: :true
 end
