@@ -11,6 +11,49 @@
   height: 100%;
   position: relative;
   flex: 1;
+  overflow: scroll;
+
+  .timer {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .answer {
+    &.card {
+      padding: 1rem;
+      justify-content: flex-start;
+      width: max-content;
+      border-radius: 5px;
+    }
+
+    &-collection {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  .question {
+    height: 4rem;
+    background: #43293c;
+    display: flex;
+    align-items: center;
+    font-weight: 100;
+    gap: 1rem;
+    font-size: 1.2rem;
+
+    &.card {
+      padding: 3rem 2rem;
+    }
+
+    &-collection {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+      gap: 4rem;
+    }
+  }
 
   &.wait {
     display: flex;
@@ -228,5 +271,14 @@ button {
   &:hover {
     background-color: $purple;
     gap: 0.8rem;
+  }
+}
+
+.remaining-count {
+  position: fixed;
+  bottom: 2rem;
+
+  .current, .total {
+    color: #e76fa3;
   }
 }
