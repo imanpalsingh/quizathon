@@ -4,7 +4,7 @@ class QuizzesController < ApplicationController
   before_action :find_or_create_quiz_session, only: [:show]
 
   def index
-   # TODO
+    @quizzes = Quiz.all
   end
 
   def show
@@ -14,7 +14,7 @@ class QuizzesController < ApplicationController
   private
 
   def fetch_quiz
-    @quiz = Quiz.find_by!(permalink: params[:permalink])
+    @quiz = Quiz.find(params[:permalink])
   end
 
   def find_or_create_quiz_session
