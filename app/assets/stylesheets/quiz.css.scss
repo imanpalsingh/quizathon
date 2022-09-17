@@ -1,0 +1,85 @@
+@import "common";
+
+.quiz-wrapper {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 0.7fr 0.3fr;
+  gap: 1rem;
+}
+
+.quiz {
+  background-color: $blue;
+  height: 100%;
+  position: relative;
+  border-radius: 15px;
+
+  &::before {
+    content: '';
+    border-radius: 15px;
+    background: linear-gradient(to bottom right, $gray 0%, $black 20%) no-repeat border-box;
+    inset: -1px;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+.leaderboard {
+  background-color: $blue;
+  border-radius: 15px;
+  height: 100%;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+
+  &-title {
+    font-size: 1.5rem;
+  }
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 6px;
+  color: $white;
+  background: $purple;
+  border-radius: 4px;
+
+  &-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  &-icon {
+    position: relative;
+    display: inline-flex;
+    margin-right: 2px;
+
+    &-inner {
+      position: absolute;
+      inset: 0;
+      will-change: opacity;
+      animation: ani-breath 1.8s ease infinite;
+    }
+
+    svg {
+      fill: currentColor
+    }
+  }
+
+  &-text {
+    display: inline-flex;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  @keyframes ani-breath {
+    0% {
+      opacity: 1
+    }
+    50% {
+      opacity: .4
+    }
+    100% {
+      opacity: 1
+    }
+  }
+}
