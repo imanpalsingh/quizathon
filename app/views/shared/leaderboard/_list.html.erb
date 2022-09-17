@@ -5,7 +5,7 @@
   </div>
   <div class="rank-list">
     <% data.each do |user| %>
-      <%= render 'shared/leaderboard/item', user %>
+      <%= render 'shared/leaderboard/item', { user: user } %>
     <% end %>
   </div>
 </div>

@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "quizzes#index"
-  resources :quizzes
+
+  resources :quizzes, except: [:show]
+  get 'quizzes/:permalink', to: 'quizzes#show'
 end
