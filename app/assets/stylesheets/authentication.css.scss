@@ -1,0 +1,47 @@
+@import "common";
+
+
+.auth-container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login{
+  background-color: $blue;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 500px;
+  height: auto;
+
+  &-form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .field{
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      &.row{
+        flex-direction: row;
+      }
+    }
+
+    .actions{
+      margin-top: 1rem;
+    }
+  }
+
+
+  h2{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 100;
+  }
+}
