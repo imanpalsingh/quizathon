@@ -9,4 +9,18 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :email, presence: :true
   validates :email, uniqueness: :true
+
+  def name
+    "#{first_name} #{last_name}"
+  end
+
+  def score
+    # TODO: Add logic
+    10
+  end
+
+  def won
+    # TODO: Add logic
+    false
+  end
 end
