@@ -1,6 +1,6 @@
 <div class="quiz-wrapper">
   <%= render 'shared/user_drawer' %>
-  <%= render 'shared/quiz/decide', { started: true, question: @question } %>
+  <%= render 'shared/quiz/decide', { started: true, questions: @questions } %>
   <%= render 'shared/leaderboard/list', { data: @users } %>
 </div>
 
