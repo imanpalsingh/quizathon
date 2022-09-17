@@ -1,12 +1,14 @@
 <div class="quiz card">
   <span class="material-icons timer">timer</span>
   <div class="question-collection">
-    <%= render "shared/quiz/question", { question: question['name'] } %>
-    <div class="answer-collection">
-      <% question['answers'].each do |answer| %>
-        <%= render "shared/quiz/answer", { content: answer } %>
-      <% end %>
-    </div>
+    <% questions.each do |question| %>
+      <%= render "shared/quiz/question", { question: question } %>
+      <div class="answer-collection">
+        <% question.choices.each do |choice| %>
+          <%= render "shared/quiz/answer", { choice: choice } %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
   <div class="remaining-count"><span class="current">2</span> / <span class="total">3</span></div>
 </div>
