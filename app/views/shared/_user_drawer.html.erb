@@ -6,10 +6,12 @@
     </span>
     <span>Imanpal Singhasd asda sd asd</span>
   </div>
-  <button class="exit">
-    <span>Exit</span>
-    <span class="material-icons">
+  <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>
+    <button class="exit">
+      <span>Exit</span>
+      <span class="material-icons">
       logout
     </span>
-  </button>
+    </button>
+  <% end %>
 </div>
