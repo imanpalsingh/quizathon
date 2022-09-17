@@ -1,0 +1,11 @@
+<div class="leaderboard card">
+  <div class="leaderboard-header">
+    <span class="leaderboard-title">Leaderboard</span>
+    <%= render 'shared/badge' %>
+  </div>
+  <div class="rank-list">
+    <% data.each do |user| %>
+      <%= render 'shared/leaderboard/item', user %>
+    <% end %>
+  </div>
+</div>

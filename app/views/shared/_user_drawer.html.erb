@@ -1,0 +1,17 @@
+<div class="user">
+  <span class="avatar"><img src="https://avatars.dicebear.com/api/avataaars/12.svg"/></span>
+  <div class="name">
+    <span class="material-icons">
+        face
+    </span>
+    <span>Imanpal Singhasd asda sd asd</span>
+  </div>
+  <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>
+    <button class="exit">
+      <span>Exit</span>
+      <span class="material-icons">
+      logout
+    </span>
+    </button>
+  <% end %>
+</div>
