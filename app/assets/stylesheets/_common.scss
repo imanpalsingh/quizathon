@@ -1,0 +1,13 @@
+$black: hsl(253, 24%, 11%);
+$blue: hsl(240, 26%, 16%);
+$purple: hsl(253, 71%, 61%);
+$white: hsl(252, 11%, 91%);
+$gray: hsla(0, 0%, 50%, 0.572);
+
+$background-primary: $black;
+$background-secondary: $blue;
+$button-primary: $purple;
+
+.card{
+  padding: 2rem;
+}
