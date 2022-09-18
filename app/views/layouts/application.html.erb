@@ -12,7 +12,14 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;500&display=swap" rel="stylesheet">
 </head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+<% if alert %>
+  <%= render 'shared/snackbar', { msg: alert } %>
+<% end %>
+<% if notice %>
+  <%= render 'shared/snackbar', { msg: notice } %>
+<% end %>
+
+<%= yield %>
+</body>
 </html>
