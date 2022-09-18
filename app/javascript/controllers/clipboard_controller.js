@@ -11,7 +11,10 @@ export default class extends Controller {
     await navigator.clipboard.writeText(window.location.href)
 
     icon.textContent = 'download_done'
-    if (this.timeout) clearTimeout(this.timeout)
+    if (this.timeout) {
+      clearTimeout(this.timeout)
+      this.timeout = null
+    }
 
     this.timeout = setTimeout(() => {
       icon.innerText = orginalTextContents
