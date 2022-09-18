@@ -19,10 +19,14 @@
             <% end %>
           <% end %>
         </div>
+      <div class="remaining-count">
+        <span class="current"><%= current(question) %></span>
+         / 
+        <span class="total"><%= total(user_quiz_session) %></span>
+      </div>
       <% else %>
         <h3> Thank you </h3>
       <% end %>
     </div>
-    <div class="remaining-count"><span class="current">2</span> / <span class="total">3</span></div>
   </div>
 <% end %>
