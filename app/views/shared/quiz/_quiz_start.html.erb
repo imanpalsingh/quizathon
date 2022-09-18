@@ -11,7 +11,7 @@
                 <%= question.fields_for :choice do |f|%>
                   <span class="answer card">
                     <%= question.hidden_field :id, value: choice.question.id %>
-                    <%= f.hidden_field :is_correct, value: choice.is_correct %>
+                    <%= f.hidden_field :id, value: choice.id %>
                     <%= f.submit choice.text %>
                   </span>
                 <% end %>
