@@ -5,4 +5,8 @@ class Question < ApplicationRecord
 
 
   validates :text, uniqueness: :true
+
+  def is_choice_correct?(choice_id)
+    choices.find(choice_id).is_correct?
+  end
 end
