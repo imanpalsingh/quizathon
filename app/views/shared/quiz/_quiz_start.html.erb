@@ -20,9 +20,9 @@
           <% end %>
         </div>
       <div class="remaining-count">
-        <span class="current"><%= question.position%></span>
+        <span class="current"><%= current(question) %></span>
          / 
-        <span class="total"><%= user_quiz_session.quiz.questions.count %></span>
+        <span class="total"><%= total(user_quiz_session) %></span>
       </div>
       <% else %>
         <h3> Thank you </h3>
