@@ -30,6 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_18_073003) do
     t.integer "duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "position"
     t.index ["quiz_id"], name: "index_questions_on_quiz_id"
   end
 
