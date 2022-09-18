@@ -9,16 +9,16 @@ class QuizzesController < ApplicationController
   end
 
   def show
-    @users = @quiz.users
+    @user_quiz_sessions = @quiz.user_quiz_sessions.order('score DESC')
   end
 
   private
 
   def fetch_quiz
-    @quiz = Quiz.find(params[:permalink])
+    @quiz = Quiz.find_by!(permalink: params[:permalink])
   end
 
   def find_or_create_quiz_session
-    UserQuizSession.first_or_create(user: current_user, quiz: @quiz)
+    UserQuizSession.find_or_create_by!(user: current_user, quiz: @quiz)
   end
 end
