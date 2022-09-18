@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   root "quizzes#index"
 
   resources :quizzes, except: [:show]
+  resources :user_quiz_sessions
   get 'quizzes/:permalink', to: 'quizzes#show'
 end
