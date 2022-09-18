@@ -5,7 +5,7 @@ class UserQuizSession < ApplicationRecord
   attr_accessor :current_question
 
   after_create_commit do
-    broadcast_append partial: 'shared/leaderboard/item',
+    broadcast_append_to quiz, partial: 'shared/leaderboard/item',
                      locals: { user: user, highest: false },
                      target: 'users-list'
   end
