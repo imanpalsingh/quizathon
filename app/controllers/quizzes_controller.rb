@@ -15,7 +15,7 @@ class QuizzesController < ApplicationController
 
   def update
     quiz = Quiz.find(params[:id])
-    quiz.update(active: true)
+    quiz.update(active: true, user_id: current_user.id)
   end
 
   private

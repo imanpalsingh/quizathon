@@ -5,17 +5,15 @@ class UserQuizSession < ApplicationRecord
   attr_accessor :current_question
 
   after_create_commit do
-    broadcast_append_to 'user_quiz_sessions_stream',
-                        partial: 'shared/leaderboard/item',
-                        locals: { user: user, highest: false },
-                        target: 'users-list'
+    broadcast_append partial: 'shared/leaderboard/item',
+                     locals: { user: user, highest: false },
+                     target: 'users-list'
   end
 
   after_update_commit do
-    broadcast_replace_to 'user_quiz_sessions_stream',
-                          partial: 'shared/leaderboard/list',
-                          locals: { data: quiz.user_quiz_sessions.order('score DESC') },
-                          target: 'user_quiz_sessions'
+    broadcast_replace_to quiz, partial: 'shared/leaderboard/list',
+                      locals: { data: quiz.user_quiz_sessions.order('score DESC') },
+                      target: 'user_quiz_sessions'
   end
 
   after_update_commit do
