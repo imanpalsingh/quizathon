@@ -4,7 +4,7 @@ class QuizzesController < ApplicationController
   before_action :find_or_create_quiz_session, only: [:show]
 
   def index
-    @quizzes = Quiz.all
+    @quizzes = Quiz.all.order(created_at: :asc)
   end
 
   def show
