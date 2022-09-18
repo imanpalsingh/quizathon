@@ -13,7 +13,7 @@
   flex: 1;
   overflow: scroll;
 
-  &-menu{
+  &-menu {
     flex: 1;
   }
 
@@ -23,19 +23,18 @@
     gap: 4rem;
 
     &-title {
-      font-size: 2.5rem;
+      font-size: 1rem;
       text-align: center;
       margin-bottom: 2rem;
-      color: $purple;
+      color: $pink;
     }
   }
 
   &-selection {
-    border: 1px solid $pink;
+    border: 2px solid $purple;
     border-radius: 5px;
     height: 10rem;
     transition: linear 200ms;
-    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,6 +42,11 @@
     font-size: 1.5rem;
     overflow: hidden;
     text-overflow: ellipsis;
+    gap: 0.5rem;
+
+    button {
+      font-size: 1rem;
+    }
 
     &:hover {
       transform: scale(1.1);
@@ -94,9 +98,7 @@
 
   &.wait {
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
     flex-direction: column;
     overflow: hidden;
     position: relative;
@@ -262,20 +264,22 @@
 .user {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   flex-direction: column;
   gap: 1rem;
   max-width: 10rem;
+  margin-top: 2rem;
 
   .avatar {
     overflow: hidden;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
+    object-fit: contain;
   }
 
   .name {
-    margin-top: 1rem;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     border-radius: 15px;
     padding: 0.4rem 0.8rem;
     background-color: rgb(67, 41, 60);
@@ -310,5 +314,15 @@
   .current,
   .total {
     color: $pink;
+  }
+}
+
+.desc-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .desc {
+    font-weight: 100;
   }
 }

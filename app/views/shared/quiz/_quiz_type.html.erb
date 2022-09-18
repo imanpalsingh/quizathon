@@ -1,5 +1,12 @@
-<%= link_to quiz_path(quiz.permalink) do %>
-  <div class="quiz-selection">
-    <%= quiz.title %>
-  </div>
-<% end %>
+<div class="quiz-selection">
+  <%= quiz.title %>
+  <%= link_to quiz_path(quiz.permalink) do %>
+    <button class="exit">
+      <span>Start</span>
+      <span class="material-icons">
+      sports_score
+    </span>
+    </button>
+  <% end %>
+</div>
+

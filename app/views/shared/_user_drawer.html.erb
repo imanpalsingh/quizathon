@@ -1,9 +1,6 @@
 <div class="user">
-  <span class="avatar"><img src="https://avatars.dicebear.com/api/avataaars/12.svg"/></span>
   <div class="name">
-    <span class="material-icons">
-        face
-    </span>
+    <span class="avatar"><img src="https://avatars.dicebear.com/api/pixel-art/<%=current_user.id%>.svg"/></span>
     <span><%= current_user.name %></span>
   </div>
   <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>
@@ -13,5 +10,15 @@
       logout
     </span>
     </button>
+  <% end %>
+  <% if can_go_back %>
+    <%= link_to root_path do %>
+      <button class="back">
+        <span>Back</span>
+        <span class="material-icons">
+      arrow_back
+    </span>
+      </button>
+    <% end %>
   <% end %>
 </div>

@@ -1,7 +1,6 @@
 <div class="auth-container">
   <div class="login card">
-    <h2>Log In</h2>
-
+    <%= render 'shared/logo' %>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "login-form" }, data: { turbo: false }) do |f| %>
       <div class="field">
         <%= f.label :email %>
@@ -21,7 +20,12 @@
       <% end %>
 
       <div class="actions">
-        <%= f.submit "Log in" %>
+        <button type="submit" class="start">
+          <span>Login</span>
+          <span class="material-icons">
+          login
+        </span>
+        </button>
       </div>
     <% end %>
 

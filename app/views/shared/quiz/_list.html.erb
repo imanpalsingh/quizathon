@@ -1,8 +1,13 @@
 <div class="quiz card">
-  <h2 class="list-title">Select a Quiz</h2>
+  <div class="list-title">
+    <%= render 'shared/logo' %>
+  </div>
   <div class="list">
     <% quizzes.each do |quiz| %>
       <%= render "shared/quiz/quiz_type", { quiz: quiz } %>
     <% end %>
+    <div class="quiz-selection">
+      Coming soon!
+    </div>
   </div>
 </div>
