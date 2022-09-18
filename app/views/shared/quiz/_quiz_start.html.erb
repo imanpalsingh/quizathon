@@ -10,7 +10,7 @@
               <%= user_quiz_session.fields_for :question do |question|%>
                 <%= question.fields_for :choice do |f|%>
                   <span class="answer card">
-                    <%= question.hidden_field :id, value: choice.question_id %>
+                    <%= question.hidden_field :id, value: choice.question.id %>
                     <%= f.hidden_field :is_correct, value: choice.is_correct %>
                     <%= f.submit choice.text %>
                   </span>

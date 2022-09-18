@@ -3,6 +3,6 @@
     <span class="leaderboard-title">Leaderboard</span>
     <%= render 'shared/badge' %>
   </div>
-  <%= turbo_stream_from 'user_quiz_sessions_stream' %>
-  <%= render 'shared/leaderboard/list', { data: data } %>
+  <%= turbo_stream_from user_quiz_sessions %>
+  <%= render 'shared/leaderboard/list', { data: user_quiz_sessions } %>
 </div>
