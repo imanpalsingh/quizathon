@@ -1,0 +1,8 @@
+<div class="leaderboard card">
+  <div class="leaderboard-header">
+    <span class="leaderboard-title">Leaderboard</span>
+    <%= render 'shared/badge' %>
+  </div>
+  <%= turbo_stream_from 'user_quiz_sessions_stream' %>
+  <%= render 'shared/leaderboard/list', { data: data } %>
+</div>

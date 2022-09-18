@@ -1,11 +1,7 @@
-<div class="leaderboard card">
-  <div class="leaderboard-header">
-    <span class="leaderboard-title">Leaderboard</span>
-    <%= render 'shared/badge' %>
-  </div>
+<%= turbo_frame_tag 'user_quiz_sessions' do %>
   <div class="rank-list">
-    <% data.each do |user| %>
-      <%= render 'shared/leaderboard/item', { user: user } %>
+    <% data.each do |user_quiz_session| %>
+      <%= render 'shared/leaderboard/item', { user_quiz_session: user_quiz_session } %>
     <% end %>
   </div>
-</div>
+<% end %>

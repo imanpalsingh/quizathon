@@ -15,14 +15,6 @@ User.create(first_name: 'Ayush', last_name: 'Billore', email: 'ayush@example.com
 # creats quizs
 Quiz.create(title: 'ActiveRecord')
 
-# creats user_quiz_sessions
-
-UserQuizSession.create(user_id: 1, quiz_id: 1, score: 40, active: true)
-UserQuizSession.create(user_id: 2, quiz_id: 1, score: 50, active: true)
-UserQuizSession.create(user_id: 3, quiz_id: 1, score: 60, active: true)
-UserQuizSession.create(user_id: 4, quiz_id: 1, score: 70, active: true)
-
-
 # create questions
 Question.create(quiz_id: 1, text: 'What is 2+2/2', points: 10)
 Question.create(quiz_id: 1, text: 'What is 2*2/2', points: 10)
