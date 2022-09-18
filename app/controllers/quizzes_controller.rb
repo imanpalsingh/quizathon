@@ -2,6 +2,9 @@ class QuizzesController < ApplicationController
   before_action :authenticate_user!
   before_action :fetch_quiz, only: [:show]
   before_action :find_or_create_quiz_session, only: [:show]
+  before_action :destroy_user_quiz_sessions, only: [:index]
+
+  skip_before_action :verify_authenticity_token, only: [:update]
 
   def index
     @quizzes = Quiz.all
@@ -15,7 +18,15 @@ class QuizzesController < ApplicationController
 
   def update
     quiz = Quiz.find(params[:id])
-    quiz.update(active: true, user_id: current_user.id)
+
+    case params[:commit]
+    when 'start'
+      quiz.update(active: true, user_id: current_user.id)
+    when 'reset'
+      quiz.update(active: false, user_id: nil)
+      quiz.user_quiz_sessions.destroy_all
+      redirect_to root_path
+    end
   end
 
   private
@@ -28,4 +39,7 @@ class QuizzesController < ApplicationController
     UserQuizSession.find_or_create_by!(user: current_user, quiz: @quiz)
   end
 
+  def destroy_user_quiz_sessions
+    current_user.user_quiz_sessions.destroy_all
+  end
 end

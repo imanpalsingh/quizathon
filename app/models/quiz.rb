@@ -13,12 +13,16 @@ class Quiz < ApplicationRecord
   end
 
   def broadcast_start_quiz
-    broadcast_replace partial: 'shared/quiz/quiz_start',
-                      locals: { question: questions.first, user_quiz_session: user_quiz_session },
-                      target: 'quiz-menu'
+    if active
+      broadcast_replace partial: 'shared/quiz/quiz_start',
+                        locals: { question: questions.first, user_quiz_session: user_quiz_session },
+                        target: 'quiz-menu'
+    else
+      broadcast_replace partial: 'shared/quiz/quiz_waiting', locals: { quiz: self }, target: 'quiz-menu'
+    end
 
+    broadcast_append_to 'reset', partial: 'shared/quiz/reset_quiz', target: 'reset', locals: { quiz: self }
   end
-
 
   def next_question(question)
     position = questions.find(question).position
@@ -28,5 +32,9 @@ class Quiz < ApplicationRecord
 
   def user_quiz_session
     user_quiz_sessions.find_by(user_id: user_id)
+  end
+
+  def user
+    User.find_by(id: user_id)
   end
 end

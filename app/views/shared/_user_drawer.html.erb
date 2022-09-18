@@ -11,14 +11,7 @@
     </span>
     </button>
   <% end %>
-  <% if can_go_back %>
-    <%= link_to root_path do %>
-      <button class="back">
-        <span>Back</span>
-        <span class="material-icons">
-      arrow_back
-    </span>
-      </button>
-    <% end %>
-  <% end %>
+
+  <%= turbo_stream_from 'reset' %>
+  <%= render 'shared/quiz/reset_quiz', quiz: quiz %>
 </div>
