@@ -12,7 +12,7 @@ class Quiz < ApplicationRecord
 
   def broadcast_start_quiz
     broadcast_replace partial: 'shared/quiz/quiz_start',
-                      locals: { questions: questions },
+                      locals: { question: questions.first },
                       target: 'quiz-menu'
 
   end
