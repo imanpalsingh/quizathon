@@ -15,4 +15,9 @@ class UserQuizSession < ApplicationRecord
                           locals: { data: quiz.user_quiz_sessions.order('score DESC') },
                           target: 'user_quiz_sessions'
   end
+
+  def update_score(new_points)
+    total_score = score + new_points
+    update(score: total_score)
+  end
 end
