@@ -1,7 +1,7 @@
 <%= turbo_frame_tag 'user_quiz_sessions' do %>
-  <div class="rank-list", id="users-list">
-    <% data.each do |user_quiz_session| %>
-      <%= render 'shared/leaderboard/item', { user_quiz_session: user_quiz_session } %>
+  <div class="rank-list" , id="users-list">
+    <% data.each_with_index do |user_quiz_session, index| %>
+      <%= render 'shared/leaderboard/item', { user_quiz_session: user_quiz_session, highest: index == 0 && user_quiz_session.score > 0 } %>
     <% end %>
   </div>
 <% end %>

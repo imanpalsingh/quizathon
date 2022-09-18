@@ -1,9 +1,9 @@
 <% className = "rank-item card" %>
-<% className << " first" if user_quiz_session.user.won %>
+<% className << " first" if highest %>
 
 <div class="<%= className %>">
   <span class="material-icons">
-  <% if user_quiz_session.user.won %>
+  <% if highest %>
     military_tech
   <% else %>
     run_circle

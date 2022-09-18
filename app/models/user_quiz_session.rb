@@ -5,7 +5,7 @@ class UserQuizSession < ApplicationRecord
   after_create_commit do
     broadcast_append_to 'user_quiz_sessions_stream',
                         partial: 'shared/leaderboard/item',
-                        locals: { user: user },
+                        locals: { user: user, highest: false },
                         target: 'users-list'
   end
 
