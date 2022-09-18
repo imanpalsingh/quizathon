@@ -17,4 +17,10 @@ class Quiz < ApplicationRecord
 
   end
 
+
+  def next_question(question)
+    position = questions.find(question).position
+
+    questions.where("position > ?", position).first
+  end
 end

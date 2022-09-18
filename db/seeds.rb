@@ -16,16 +16,22 @@ User.create(first_name: 'Ayush', last_name: 'Billore', email: 'ayush@example.com
 Quiz.create(title: 'ActiveRecord')
 
 # create questions
-Question.create(quiz_id: 1, text: 'What is 2+2/2', points: 10)
-Question.create(quiz_id: 1, text: 'What is 2*2/2', points: 10)
+Question.create(quiz_id: 1, text: 'Question 1', points: 10, position: 1)
+Question.create(quiz_id: 1, text: 'Question 2', points: 10, position: 2)
+Question.create(quiz_id: 1, text: 'Question 3', points: 10, position: 3)
 
 # create chioces
-Choice.create(question_id: 1, text: '2', is_correct: false)
-Choice.create(question_id: 1, text: '3', is_correct: true)
-Choice.create(question_id: 1, text: '1', is_correct: false)
-Choice.create(question_id: 1, text: '4', is_correct: false)
+Choice.create(question_id: 1, text: 'wrong', is_correct: false)
+Choice.create(question_id: 1, text: 'right', is_correct: true)
+Choice.create(question_id: 1, text: 'wrong', is_correct: false)
+Choice.create(question_id: 1, text: 'wrong', is_correct: false)
 
-Choice.create(question_id: 2, text: '2', is_correct: true)
-Choice.create(question_id: 2, text: '3', is_correct: false)
-Choice.create(question_id: 2, text: '1', is_correct: false)
-Choice.create(question_id: 2, text: '4', is_correct: false)
+Choice.create(question_id: 2, text: 'right', is_correct: true)
+Choice.create(question_id: 2, text: 'wrong', is_correct: false)
+Choice.create(question_id: 2, text: 'wrong', is_correct: false)
+Choice.create(question_id: 2, text: 'wrong', is_correct: false)
+
+Choice.create(question_id: 3, text: 'right', is_correct: true)
+Choice.create(question_id: 3, text: 'wrong', is_correct: false)
+Choice.create(question_id: 3, text: 'wrong', is_correct: false)
+Choice.create(question_id: 3, text: 'wrong', is_correct: false)
