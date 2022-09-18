@@ -1,6 +1,10 @@
-<% if started %>
-  <%= turbo_stream_from user %>
-  <%= render 'shared/quiz/quiz_start', { question: question, user_quiz_session: user_quiz_session } %>
-<% else %>
-  <%= render 'shared/quiz/quiz_waiting' %>
-<% end %>
+<%= turbo_stream_from quiz %>
+
+<div class="quiz-menu" id="quiz-menu">
+  <% if quiz.active %>
+    <%= turbo_stream_from user %>
+    <%= render 'shared/quiz/quiz_start', { questions: quiz.questions } %>
+  <% else %>
+    <%= render 'shared/quiz/quiz_waiting', { quiz: quiz } %>
+  <% end %>
+</div>
