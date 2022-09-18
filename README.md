@@ -17,16 +17,8 @@ Rails Quiz allows multiple users to answer quiz questions simultaneously.
 
 
 1. Share the link for a multiplayer game.
-2. Starting the quiz will start for all players.
+2. Live leaderboard.
 
-
-## List of functionality
-1. Sign Up
-2. Login
-3. Reset Password Functionality
-4. Live Update on the Leaderboard
-5. Dynamic Question changes
-6. Logout
 
 #### 1. Visit to [Rails Quiz Login](https://team-54.herokuapp.com/users/sign_in)
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/61962822/190927805-36ab0b79-4f46-4600-8fc2-6e27d946427b.png">
@@ -46,7 +38,7 @@ Rails Quiz allows multiple users to answer quiz questions simultaneously.
     * **Profile**:- 
       - This section has two button.
         * **Exit**:- Upon clicking on this button, we are logged out and redirected to the login page.
-        * **Back**:- Clicking on this button redirects us to the quizzes page.
+        * **Reset**:- Clicking on this button resets the quiz for **everyone**.
     * **Question section**:- 
       - In this section, the first question is presented with the following options.
         * As soon as we click on the correct option, the score will be update in the Leaderboard and display the next question.
