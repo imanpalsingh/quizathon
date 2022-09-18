@@ -1,5 +1,5 @@
 <%= turbo_frame_tag 'user_quiz_sessions' do %>
-  <div class="rank-list">
+  <div class="rank-list", id="users-list">
     <% data.each do |user_quiz_session| %>
       <%= render 'shared/leaderboard/item', { user_quiz_session: user_quiz_session } %>
     <% end %>

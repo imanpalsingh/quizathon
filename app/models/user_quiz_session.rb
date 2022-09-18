@@ -3,10 +3,10 @@ class UserQuizSession < ApplicationRecord
   belongs_to :quiz
 
   after_create_commit do
-    broadcast_append_to 'user_quiz_sessions',
+    broadcast_append_to 'user_quiz_sessions_stream',
                         partial: 'shared/leaderboard/item',
                         locals: { user: user },
-                        target: 'user_quiz_sessions'
+                        target: 'users-list'
   end
 
   after_update_commit do
