@@ -1,5 +1,6 @@
 <% if started %>
-  <%= render 'shared/quiz/quiz_start', { questions: questions } %>
+  <%= turbo_stream_from user %>
+  <%= render 'shared/quiz/quiz_start', { question: question, user_quiz_session: user_quiz_session } %>
 <% else %>
   <%= render 'shared/quiz/quiz_waiting' %>
 <% end %>

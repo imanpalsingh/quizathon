@@ -9,6 +9,8 @@ class QuizzesController < ApplicationController
 
   def show
     @user_quiz_sessions = @quiz.user_quiz_sessions.order('score DESC')
+    @user_quiz_session = current_user.user_quiz_sessions.first
+    @user = current_user
   end
 
   private

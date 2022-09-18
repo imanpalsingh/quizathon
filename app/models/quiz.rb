@@ -8,4 +8,10 @@ class Quiz < ApplicationRecord
   def generate_unique_permalink
     self.permalink = SecureRandom.uuid
   end
+
+  def next_question(question)
+    position = questions.find(question).position
+
+    questions.where("position > ?", position).first
+  end
 end

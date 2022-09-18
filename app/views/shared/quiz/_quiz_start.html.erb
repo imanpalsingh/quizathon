@@ -1,25 +1,28 @@
-<div class="quiz card">
-  <span class="material-icons timer">timer</span>
-  <div class="question-collection">
-    <% questions.each do |question| %>
-      <%= render "shared/quiz/question", { question: question } %>
-      <div class="answer-collection">
-        <% question.choices.each do |choice| %>
-          <%= form_with model: current_user.user_quiz_sessions.first do |user_quiz_session|%>
-            <%= user_quiz_session.fields_for :question do |question|%>
-              <%= question.fields_for :choice do |f|%>
-                <span class="answer card">
-                  <%= question.hidden_field :id, value: choice.question_id %>
-                  <%= f.hidden_field :is_correct, value: choice.is_correct %>
-                  <%= f.submit choice.text %>
-                </span>
+<%= turbo_frame_tag 'user_quiz_sessions_questions' do %>
+  <div class="quiz card">
+    <span class="material-icons timer">timer</span>
+    <div class="question-collection">
+      <% if question.present? %>
+        <%= render "shared/quiz/question", { question: question } %>
+        <div class="answer-collection">
+          <% question.choices.each do |choice| %>
+            <%= form_with model: user_quiz_session do |user_quiz_session|%>
+              <%= user_quiz_session.fields_for :question do |question|%>
+                <%= question.fields_for :choice do |f|%>
+                  <span class="answer card">
+                    <%= question.hidden_field :id, value: choice.question_id %>
+                    <%= f.hidden_field :is_correct, value: choice.is_correct %>
+                    <%= f.submit choice.text %>
+                  </span>
+                <% end %>
               <% end %>
             <% end %>
           <% end %>
-
-        <% end %>
-      </div>
-    <% end %>
+        </div>
+      <% else %>
+        <h3> Thank you </h3>
+      <% end %>
+    </div>
+    <div class="remaining-count"><span class="current">2</span> / <span class="total">3</span></div>
   </div>
-  <div class="remaining-count"><span class="current">2</span> / <span class="total">3</span></div>
-</div>
+<% end %>
