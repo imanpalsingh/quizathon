@@ -22,7 +22,7 @@ class UserQuizSession < ApplicationRecord
     broadcast_replace_to user,
                          partial: 'shared/quiz/quiz_start',
                          locals: { question: quiz.next_question(current_question) , user_quiz_session: self },
-                         target: 'user_quiz_sessions_questions'
+                         target: 'quiz-start'
   end
 
   def update_score(new_points)
