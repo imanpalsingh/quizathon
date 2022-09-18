@@ -5,7 +5,6 @@ class QuizzesController < ApplicationController
 
   def index
     @quizzes = Quiz.all
-    @questions = Question.all
   end
 
   def show
