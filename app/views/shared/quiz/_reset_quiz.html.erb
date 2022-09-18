@@ -1,0 +1,12 @@
+<div id="reset">
+  <% if quiz&.active %>
+    <%= form_with model: quiz, data: { turbo: false } do %>
+      <button class="back" type="submit" name="commit" value="reset">
+        <span>Reset</span>
+        <span class="material-icons">
+          restart_alt
+        </span>
+      </button>
+    <% end %>
+  <% end %>
+</div>

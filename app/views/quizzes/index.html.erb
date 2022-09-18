@@ -1,4 +1,4 @@
 <div class="quiz-wrapper">
-  <%= render 'shared/user_drawer', { can_go_back: false } %>
+  <%= render 'shared/user_drawer', { quiz: @quiz } %>
   <%= render 'shared/quiz/list', { quizzes: @quizzes } %>
 </div>
