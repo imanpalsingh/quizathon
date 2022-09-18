@@ -1,5 +1,5 @@
 <div class="quiz-wrapper">
-  <%= render 'shared/user_drawer' %>
+  <%= render 'shared/user_drawer', { can_go_back: true } %>
   <%= render 'shared/quiz/decide', { quiz: @quiz, user: @user } %>
   <%= render 'shared/leaderboard/leaderboard', { user_quiz_sessions: @user_quiz_sessions } %>
 </div>

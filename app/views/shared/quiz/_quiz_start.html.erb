@@ -1,4 +1,4 @@
-<%= turbo_frame_tag 'quiz-start' do %>
+<%= turbo_frame_tag 'quiz-start', class: 'extend' do %>
   <div class="quiz card">
     <span class="material-icons timer">timer</span>
     <div class="question-collection">
@@ -6,9 +6,9 @@
         <%= render "shared/quiz/question", { question: question } %>
         <div class="answer-collection">
           <% question.choices.each do |choice| %>
-            <%= form_with model: user_quiz_session do |user_quiz_session|%>
-              <%= user_quiz_session.fields_for :question do |question|%>
-                <%= question.fields_for :choice do |f|%>
+            <%= form_with model: user_quiz_session do |user_quiz_session| %>
+              <%= user_quiz_session.fields_for :question do |question| %>
+                <%= question.fields_for :choice do |f| %>
                   <span class="answer card">
                     <%= question.hidden_field :id, value: choice.question.id %>
                     <%= f.hidden_field :is_correct, value: choice.is_correct %>
@@ -19,11 +19,11 @@
             <% end %>
           <% end %>
         </div>
-      <div class="remaining-count">
-        <span class="current"><%= current(question) %></span>
-         / 
-        <span class="total"><%= total(user_quiz_session) %></span>
-      </div>
+        <div class="remaining-count">
+          <span class="current"><%= current(question) %></span>
+          /
+          <span class="total"><%= total(user_quiz_session) %></span>
+        </div>
       <% else %>
         <h3> Thank you </h3>
       <% end %>
