@@ -3,6 +3,7 @@ $blue: hsl(240, 26%, 16%);
 $purple: hsl(253, 71%, 61%);
 $white: hsl(252, 11%, 91%);
 $gray: hsla(0, 0%, 50%, 0.572);
+$pink: hsl(334, 71%, 67%);
 
 $background-primary: $black;
 $background-secondary: $blue;
@@ -13,7 +14,8 @@ $button-primary: $purple;
   border-radius: 15px;
 }
 
-button, input[type="submit"] {
+button,
+input[type="submit"] {
   background-color: transparent;
   color: $white;
   border: 1px solid $purple;
@@ -26,20 +28,48 @@ button, input[type="submit"] {
   justify-content: center;
   gap: 0.4rem;
 
+  .material-icons {
+    color: $purple;
+  }
+
+
   &:hover {
     background-color: $purple;
     gap: 0.8rem;
+
+    .material-icons {
+      color: $white;
+    }
+  }
+}
+
+button[type="secondary"] {
+  border-color: $pink;
+
+  .material-icons {
+    color: $pink;
+  }
+
+  &:hover {
+    background-color: $pink;
+
+    .material-icons {
+      color: $white;
+    }
   }
 }
 
 a {
   transition: 200ms;
+
   &:hover {
     color: $purple;
   }
 }
 
-input[type="text"], input[type="email"], input[type="password"] {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
   background: transparent;
   color: $white;
   padding: 0.5rem 1rem;
