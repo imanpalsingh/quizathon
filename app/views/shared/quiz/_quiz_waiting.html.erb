@@ -3,18 +3,22 @@
   <div class="content">
     <span class="title">The quiz has not started yet</span>
     <div class="action-items">
-      <button class="start">
-        <span>Start Quiz</span>
-        <span class="material-icons">
+      <%= form_with model: quiz do |f| %>
+        <button type="submit" class="start">
+          <span>Start Quiz</span>
+          <span class="material-icons">
           flight_takeoff
         </span>
-      </button>
+        </button>
+      <% end %>
+
       <button type="secondary" class="copy" data-controller="clipboard" data-clipboard-target="action" data-action="clipboard#copy">
         <span>Copy link</span>
         <span class="material-icons">
           content_paste
         </span>
       </button>
+
     </div>
   </div>
 </div>

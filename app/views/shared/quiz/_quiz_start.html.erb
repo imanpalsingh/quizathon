@@ -1,14 +1,16 @@
-<div class="quiz card">
-  <span class="material-icons timer">timer</span>
-  <div class="question-collection">
-    <% questions.each do |question| %>
-      <%= render "shared/quiz/question", { question: question } %>
-      <div class="answer-collection">
-        <% question.choices.each do |choice| %>
-          <%= render "shared/quiz/answer", { choice: choice } %>
-        <% end %>
-      </div>
-    <% end %>
+<%= turbo_frame_tag 'quiz-start', class: "extend" do %>
+  <div class="quiz card">
+    <span class="material-icons timer">timer</span>
+    <div class="question-collection">
+      <% questions.each do |question| %>
+        <%= render "shared/quiz/question", { question: question } %>
+        <div class="answer-collection">
+          <% question.choices.each do |choice| %>
+            <%= render "shared/quiz/answer", { choice: choice } %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="remaining-count"><span class="current">2</span> / <span class="total">3</span></div>
   </div>
-  <div class="remaining-count"><span class="current">2</span> / <span class="total">3</span></div>
-</div>
+<% end %>

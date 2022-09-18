@@ -12,6 +12,11 @@ class QuizzesController < ApplicationController
     @user_quiz_sessions = @quiz.user_quiz_sessions.order('score DESC')
   end
 
+  def update
+    quiz = Quiz.find(params[:id])
+    quiz.update(active: true)
+  end
+
   private
 
   def fetch_quiz
@@ -21,4 +26,5 @@ class QuizzesController < ApplicationController
   def find_or_create_quiz_session
     UserQuizSession.find_or_create_by!(user: current_user, quiz: @quiz)
   end
+
 end
