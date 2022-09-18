@@ -1,10 +1,8 @@
-<div class="quiz-header">
-  <span class="quiz-title">Quiz List</span>
-</div>
-<div class="quiz-list">
-  <% quizzes.each do |quiz| %>
-    <div>
-      <span class="name"><%= link_to(quiz.title, quiz_path(quiz.permalink)) %></span>
-    </div>
-  <% end %>
+<div class="quiz card">
+  <h2 class="list-title">Select a Quiz</h2>
+  <div class="list">
+    <% quizzes.each do |quiz| %>
+      <%= render "shared/quiz/quiz_type", { quiz: quiz } %>
+    <% end %>
+  </div>
 </div>
